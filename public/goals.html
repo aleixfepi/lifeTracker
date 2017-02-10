@@ -46,9 +46,8 @@
             <span class="glyphicon glyphicon-sort" aria-hidden="true"></span>
           </label>
         </div>
-        <div class="col-xs-10 goal">{{goal.description}} {{goal.ok}}</div>
+        <div class="col-xs-10 goal">{{goal.description}} - Succesfull days: {{goal.percentage}}%</div>
         <div class="col-xs-1">
-          Succsesfull days: {{goal.percentage}}%</div>
           <div class="pull-right">
             <label class="btn btn-danger">
               <span class="glyphicon glyphicon-trash" aria-hidden="true" ng-click="removeGoal(goal)"></span>
