@@ -27,8 +27,8 @@
         <ul class="nav navbar-nav">
           <li><a href="index.html">Home</a></li>
           <li><a href="goals.html">Goals</a></li>
-          <li class="active"><a href="#">Track</a></li>
-          <li><a href="analyse.html">Analyse</a></li>
+          <li><a href="tracker.html">Track</a></li>
+          <li class="active"><a href="#">Analyse</a></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
@@ -42,17 +42,8 @@
       </div>
       <div ng-repeat="goal in goals" class="form-group row form-row">
         <div class="col-xs-1">
-        </div>
-        <div class="col-xs-9 goal">{{goal.description}}</div>
-          <div class="col-xs-2">
-          <div class="pull-right">
-            <label class="btn btn-success">
-              <span class="glyphicon glyphicon-ok" aria-hidden="true" ng-click="addOk(goal)"></span>
-            </label>
-            <label class="btn btn-danger">
-              <span class="glyphicon glyphicon-remove" aria-hidden="true" ng-click="addKo(goal)"></span>
-            </label>
-          </div>
+      </div>
+        <div class="col-xs-9 goal">{{goal.description}} - Succesfull days: {{goal.percentage}}%</div>
         </div>
       </div>
     </div>
