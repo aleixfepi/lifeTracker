@@ -9,6 +9,8 @@
   <script src="/javascripts/goalController.js"></script>
   <script src="/javascripts/goalService.js"></script>
   <script src="/javascripts/front.js"></script>
+  <script type="text/javascript" src="calendarDateInput.js">
+  </script>
 </head>
 <body ng-app="laag" ng-controller="goalCtrl">
   <!-- Fixed navbar -->
@@ -43,19 +45,29 @@
       <div ng-repeat="goal in goals" class="form-group row form-row">
         <div class="col-xs-1">
         </div>
-        <div class="col-xs-9 goal">{{goal.description}}</div>
+        <div class="col-xs-9 goal">{{goal.description}} {{goal.result}}
+        </div>
           <div class="col-xs-2">
           <div class="pull-right">
-            <label class="btn btn-success">
+            <label  ng-class="{'negro': goal.result==1}"  class="btn btn-success">
               <span class="glyphicon glyphicon-ok" aria-hidden="true" ng-click="addOk(goal)"></span>
             </label>
-            <label class="btn btn-danger">
+            </div>
+            <label ng-class="{'negro': goal.result==-1}" class="btn btn-danger">
               <span class="glyphicon glyphicon-remove" aria-hidden="true" ng-click="addKo(goal)"></span>
             </label>
           </div>
         </div>
       </div>
     </div>
+     
+        <form ng-submit="addDate()">
+          <div class="row form-row">
+            <div class="col-xs-3">
+              <input type="date" ng-model="day" class="form-control"/></input> {{day}}
+            </div>
+          </div>
+        </form>
 
     <hr>
     <footer>

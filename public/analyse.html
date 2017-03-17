@@ -11,7 +11,6 @@
   <script src="/javascripts/front.js"></script>
 </head>
 <body ng-app="laag" ng-controller="goalCtrl">
-  <!-- Fixed navbar -->
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
@@ -30,7 +29,7 @@
           <li><a href="tracker.html">Track</a></li>
           <li class="active"><a href="#">Analyse</a></li>
         </ul>
-      </div><!--/.nav-collapse -->
+      </div>
     </div>
   </nav>
   <div class="container">
@@ -41,10 +40,8 @@
         </div>
       </div>
       <div ng-repeat="goal in goals" class="form-group row form-row">
-        <div class="col-xs-1">
-      </div>
-        <div class="col-xs-9 goal">{{goal.description}} - Succesfull days: {{goal.percentage}}%</div>
-        </div>
+        <div class="col-xs-11,5 goal col-md-offset-1 goal">{{goal.description}}<div class="pull-right"><label class="btn btn-success">{{goal.ok}} ok</label><label class="btn btn-danger">  {{goal.ko}} ko </label> </div>
+        </div></div>
       </div>
     </div>
 
